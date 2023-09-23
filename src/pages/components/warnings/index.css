@@ -1,0 +1,26 @@
+.warning-field{
+    position: absolute;
+    top: 5%;
+    right: 0%;
+    background-color: var(--vermelho-alerta);
+    padding: 20px 60px;
+    border-left: 6px solid var(--vermelho-alerta-2);
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    z-index: 1;
+    display: none;
+}
+
+@keyframes alertMotion{
+    0%{
+        transform: translateX(150%);
+    } 35% {
+        transform: translateX(0px);
+    } 50% {
+        transform: translateX(0px);
+    } 75% {
+        transform: translateX(0px);
+    } 100% {
+        transform: translateX(150%);
+    }
+}

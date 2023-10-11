@@ -1,0 +1,6 @@
+.controls__buttons{
+    position: fixed;
+    z-index: 100;
+    bottom: 5%;
+    left: 5%;
+}

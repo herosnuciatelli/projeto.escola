@@ -2,10 +2,11 @@ import Foguete from '../assets/foguete.png'
 import Conchete from '../assets/conchete.png'
 import Warnings from '../components/warnings/index'
 import './index.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Login(props){
-    //props.setUser("Login_Forçado")
+    props.onLoginSuccess("Login_Forçado")
+
     const [warningText, setWarningText] = useState()
     const [warningType, setWarningType] = useState()
 
@@ -22,7 +23,7 @@ function Login(props){
             setWarningText('Login feito com Sucesso!')
 
             setTimeout(()=> {
-                return props.setUser('Washington') 
+                return props.onLoginSuccess('Washington');
             }, 1500)
             
         } else {
@@ -63,7 +64,13 @@ function Login(props){
         }
     };
 
-    setInterval(verificarInput, 10);
+    useEffect(() => {
+        const intervalId = setInterval(verificarInput, 10);
+
+        return () => {
+            clearInterval(intervalId); // Limpa o intervalo quando o componente é desmontado.
+        };
+    }, []);
 
     const eyeFunctions = () => {
         const input = document.getElementById('senha')
@@ -81,7 +88,7 @@ function Login(props){
 
     return(
    
-        <div className="container">
+        <div className="container" style={{background: '#fff', color: '#000'}}>
             <Warnings setWarningText={setWarningText} warningText={warningText} warningType={warningType}/>
             <div className="rocket">
                 <img className='rocket__img' src={Foguete} />

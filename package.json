@@ -1,5 +1,5 @@
 {
-  "homepage":"https://herosnuciatelli.github.io/projeto.escola",
+  "homepage": "https://herosnuciatelli.github.io/projeto.escola",
   "name": "projeto-da-escola",
   "private": true,
   "version": "0.0.0",
@@ -13,8 +13,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@react-three/drei": "^9.87.0",
+    "@react-three/fiber": "^8.14.5",
+    "@types/three": "^0.156.0",
+    "gsap": "^3.12.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "three": "^0.157.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

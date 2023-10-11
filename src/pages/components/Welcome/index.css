@@ -1,0 +1,39 @@
+.container__welcome h2 {
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.28px;
+    text-align: center;
+    margin-top: 3%;
+    background: -webkit-linear-gradient(0deg,#cdcbca, aliceblue,#00231e,#001e21);
+    background-size: auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 100% !important;
+}
+
+.container__welcome {
+    height: 100vh;
+}
+
+@media screen and (max-width: 860px) {
+    .container__welcome h2 {
+        font-size: 90px;
+        background: -webkit-linear-gradient(0deg,#cdcbca, aliceblue,#ccfff1,#001e21);
+        background-size: auto;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100% 100% !important;
+        margin-top: 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container__welcome h2 {
+        font-size: 50px;
+
+    }
+}

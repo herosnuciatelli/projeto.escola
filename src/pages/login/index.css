@@ -1,210 +1,209 @@
-.rocket{
-    background-color: var(--azul-login);
-    width: 50%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.rocket {
+  background-color: var(--azul-login);
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.rocket .rocket__img{
-    width: 70%;
+.rocket .rocket__img {
+  width: 70%;
 }
 
-.rocket__letters{
-    position: absolute;
-    font-size: 200px;
-    transform: rotate(25deg);
-    color: #fff;
-    opacity: 10%;
-    font-weight: 700;
+.rocket__letters {
+  position: absolute;
+  font-size: 200px;
+  transform: rotate(25deg);
+  color: #fff;
+  opacity: 10%;
+  font-weight: 700;
 }
 
-.rocket__letters:nth-child(2){
-    top: -3%;
-    left: -10%;
+.rocket__letters:nth-child(2) {
+  top: -3%;
+  left: -10%;
 }
 
-.rocket__letters:nth-child(3){
-    top: 3%;
-    right: -5%;
+.rocket__letters:nth-child(3) {
+  top: 3%;
+  right: -5%;
 }
 
-.rocket__letters:nth-child(4){
-    bottom: 3%;
-    right: -10%;
+.rocket__letters:nth-child(4) {
+  bottom: 3%;
+  right: -10%;
 }
 
-.rocket__letters:nth-child(5){
-    bottom: 3%;
-    left: -5%;
+.rocket__letters:nth-child(5) {
+  bottom: 3%;
+  left: -5%;
 }
 
-.container{
-    max-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
+.container {
+  max-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
 }
 
-.login{
-    width: 50%;
-    height: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.login {
+  width: 50%;
+  height: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.login .content{
-    width: 50%;
+.login .content {
+  width: 50%;
 }
 
-@media screen and (max-width: 1440px){
-    .login .content{
-        width: 60%;
-    }
+@media screen and (max-width: 1440px) {
+  .login .content {
+    width: 60%;
+  }
 }
 
-.login .content h2{
-    text-align: center;
-    font-size: 40px;
-    font-weight: 600;
+.login .content h2 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
 }
 
-.login .content .input-container input{
-    display: block;
-    width: 100%;
-    padding: 14px 10px;
-    font-size: 16px;
-    outline: none;
-    border: 1px solid var(--cinza-input);
-    transition: 400ms;
+.login .content .input-container input {
+  display: block;
+  width: 100%;
+  padding: 14px 10px;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid var(--cinza-input);
+  transition: 400ms;
 }
 
-.login .content .input-container input:hover{
-    border: 1px solid var(--azul-login);
+.login .content .input-container input:hover {
+  border: 1px solid var(--azul-login);
 }
 
-.login .content .input-container:nth-child(2) input{
-    margin-bottom: 23px;
-    margin-top: 46px;
+.login .content .input-container:nth-child(2) input {
+  margin-bottom: 23px;
+  margin-top: 46px;
 }
-.login .content .input-container:nth-child(3) input{
-    margin-bottom: 58px;
-}
-
-.login .content button{
-    width: 100%;
-    padding: 14px 0px;
-    background-color: #fff;
-    border: 1px solid var(--azul-login);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 300ms;
+.login .content .input-container:nth-child(3) input {
+  margin-bottom: 58px;
 }
 
-.login .content button:hover{
-    background-color: var(--azul-login);
-    color: #fff;
+.login .content button {
+  width: 100%;
+  padding: 14px 0px;
+  background-color: #fff;
+  border: 1px solid var(--azul-login);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 300ms;
 }
 
+.login .content button:hover {
+  background-color: var(--azul-login);
+  color: #fff;
+}
 
 .input-container {
-    position: relative;
+  position: relative;
 }
-  
+
 .input-label {
-    position: absolute;
-    top: 15px;
-    left: 10px;
-    pointer-events: none;
-    transition: 0.2s ease-out;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  pointer-events: none;
+  transition: 0.2s ease-out;
 }
 
 .eye-label {
-    position: absolute;
-    top: 15px;
-    right: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
-  
-.input-field:focus + .input-label {
-    top: -9px;
-    font-size: 12px;
-    background-color: white;
-    padding: 0 5px;
-    color: var(--azul-login);
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.creditos{
-    position: absolute;
-    bottom: 5%;
+.input-field:focus + .input-label {
+  top: -9px;
+  font-size: 12px;
+  background-color: white;
+  padding: 0 5px;
+  color: var(--azul-login);
+}
+
+.creditos {
+  position: absolute;
+  bottom: 5%;
 }
 
 .creditos a {
-    text-decoration: underline;
-    color: var(--azul-login);
-    transition: 300ms;
+  text-decoration: underline;
+  color: var(--azul-login);
+  transition: 300ms;
 }
 
 .creditos a:hover {
-    color: #000;
+  color: #000;
 }
 
-.conchete{
-    display: none;
+.conchete {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
-    .container{
-        display: block;
-    }
-    .rocket{
-        display: none;
-    }
-    .login{
-        width: 100%;
-        height: 60vh;
-        align-items: start;
-    }
-    .login .content{
-        width: 80%;
-    }
-    .conchete{
-        padding-top: 10px;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: var(--azul-login);
-        text-align: center;
-    }
-    .conchete .conchete__img{
-        width: 40%;
-    }
-    .mobile-divisor{
-        width: 100%;
-        background-color: #fff;
-        height: 50px;
-        margin-top: -30px;
-        border-radius: 20px;
-    }
+  .container {
+    display: block;
+  }
+  .rocket {
+    display: none;
+  }
+  .login {
+    width: 100%;
+    height: 60vh;
+    align-items: start;
+  }
+  .login .content {
+    width: 80%;
+  }
+  .conchete {
+    padding-top: 10px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--azul-login);
+    text-align: center;
+  }
+  .conchete .conchete__img {
+    width: 40%;
+  }
+  .mobile-divisor {
+    width: 100%;
+    background-color: #fff;
+    height: 50px;
+    margin-top: -30px;
+    border-radius: 20px;
+  }
 }
 
 @media screen and (min-width: 540px) {
-    .conchete .conchete__img{
-        width: 30%;
-    }
+  .conchete .conchete__img {
+    width: 30%;
+  }
 }
 
 @media screen and (min-width: 660px) {
-    .conchete .conchete__img{
-        width: 20%;
-    }
+  .conchete .conchete__img {
+    width: 20%;
+  }
 }

@@ -653,6 +653,11 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
+baffle@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.npmjs.org/baffle/-/baffle-0.3.6.tgz"
+  integrity sha512-EAae8dURqcjcuQOXdU69vvLX50NobtFyPwhCZGd40sz220E+4b47X8I24Uuj44bYoIY7ieNdgrtvhFdZM5/qag==
+
 balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"

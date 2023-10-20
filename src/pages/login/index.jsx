@@ -5,7 +5,7 @@ import "./index.css";
 import { useState, useEffect } from "react";
 
 function Login(props) {
-  props.onLoginSuccess("Login_Forçado")
+  // props.onLoginSuccess("Login_Forçado")
 
   const [warningText, setWarningText] = useState();
   const [warningType, setWarningType] = useState();

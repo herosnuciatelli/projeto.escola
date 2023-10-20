@@ -4,7 +4,8 @@ import Login from "../login/index";
 import { Canvas, useFrame } from "@react-three/fiber";
 import Experience from "../components/Experience";
 import { CameraControls } from "@react-three/drei";
-import Loading from "../components/Loading";
+import ExerciciosPoliedros from "../components/exercicios";
+import Final from "../components/Final";
 
 const ViewerCube = (props) => {
   const ViewerCubeRef = useRef();
@@ -70,6 +71,15 @@ function App() {
     };
   }, []);
 
+  // Exercises
+
+  const [Exercise, SetExercise] = useState(false);
+  const [ShowCongrats, SetShowCongrats] = useState(404);
+
+  // END
+
+  const [FinalScreen, SetFinalScreen] = useState(false);
+
   return (
     <>
       <div className="trabalho__app">
@@ -77,12 +87,15 @@ function App() {
           <div className="app">
             {!Viewer && (
               <>
-                <Loading />
                 <Canvas style={{ height: "100%" }} camera={{ fov: 65 }}>
                   <Experience
                     SetViewer={SetViewer}
                     windowWidth={windowWidth}
                     Viewer={Viewer}
+                    Exercise={Exercise}
+                    SetExercise={SetExercise}
+                    ShowCongrats={ShowCongrats}
+                    FinalScreen={FinalScreen}
                   />
                   <ambientLight intensity={0.5} />
                   <pointLight position={[-10, 8, 15]} intensity={1000} />
@@ -116,6 +129,19 @@ function App() {
                 </div>
               </>
             )}
+
+            {Exercise && (
+              <>
+                <ExerciciosPoliedros
+                  SetExercise={SetExercise}
+                  SetShowCongrats={SetShowCongrats}
+                  ShowCongrats={ShowCongrats}
+                  SetFinalScreen={SetFinalScreen}
+                />
+              </>
+            )}
+
+            {FinalScreen && <Final />}
           </div>
         ) : (
           <Login onLoginSuccess={handleLoginSuccess} />

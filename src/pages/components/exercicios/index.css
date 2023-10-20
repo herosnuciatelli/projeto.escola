@@ -1,0 +1,66 @@
+.container__exercise{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+}
+
+
+.container__exercise .question span{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.container__exercise .question {
+    font-size: 20px;
+    padding: 5% 10%;
+    position: relative;
+}
+
+.alternativas {
+    margin-top: 20%;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.right,
+.wrong{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5% 0;
+}
+
+.title__congrats{
+    font-size: 60px;
+    letter-spacing: 10px;
+}
+
+@media screen and ( max-width: 770px ) {
+    .container__exercise .question span {
+        font-size: 20px;
+    }
+    .container__exercise .question{
+        font-size: 16px;
+    }
+    .alternativas {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .title__congrats{
+        font-size: 30px;
+    }
+}

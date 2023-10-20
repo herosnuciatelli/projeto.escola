@@ -30,7 +30,7 @@ const Cube = (props) => {
     });
 
     tl.current
-      .to(CubeRef.current.position, { x: 100 }, 2)
+      .to(CubeRef.current.position, { x: 30 }, 2)
 
       .to(CubeRef.current.rotation, { x: -1.5 }, 6)
       .to(CubeRef.current.position, { x: 0 }, 6)
@@ -87,28 +87,54 @@ const Experience = (props) => {
 
   return (
     <>
-      <ScrollControls pages={5} damping={0.25}>
-        <directionalLight castShadow position={[0, 10, 0]} />
+      <ScrollControls pages={5} damping={0.15}>
+        {(!props.Exercise && !props.FinalScreen ) && (
+          <>
+            <directionalLight castShadow position={[0, 10, 0]} />
 
-        <Cube
-          windowWidth={props.windowWidth}
-          isMobile={isMobile}
-          Viewer={props.Viewer}
-        />
+            <Cube
+              windowWidth={props.windowWidth}
+              isMobile={isMobile}
+              Viewer={props.Viewer}
+            />
+          </>
+        )}
 
-        <Suspense fallback={null}>
-          {/* <Yoda /> */}
-          <Avatar windowWidth={props.windowWidth} isMobile={isMobile} />
-        </Suspense>
+        {(!props.Exercise ||
+          props.ShowCongrats === 500 ||
+          props.ShowCongrats === 200) && (
+          <Suspense fallback={null}>
+            <Avatar
+              windowWidth={props.windowWidth}
+              isMobile={isMobile}
+              ShowCongrats={props.ShowCongrats}
+              FinalScreen={props.FinalScreen}
+            />
+          </Suspense>
+        )}
+
+        {(props.ShowCongrats === 500) && (
+          <mesh position={[0,-3.8,-6]} scale={3}>
+            <boxGeometry />
+            <meshStandardMaterial color="#e01e37"/>
+          </mesh>
+        )}
 
         <Sparkles size={2} color={"#fff"} scale={[10, 10, 10]}></Sparkles>
 
         <Scroll html style={{ width: "100%" }}>
-          <Welcome />
-          <What />
-          <SomaAngulosInternos HandleViewer={HandleViewer} />
-          <Arestas HandleViewer={HandleViewer} />
-          <Euler HandleViewer={HandleViewer} />
+          {(!props.Exercise && !props.FinalScreen ) && (
+            <>
+              <Welcome />
+              <What />
+              <SomaAngulosInternos HandleViewer={HandleViewer} />
+              <Arestas HandleViewer={HandleViewer} />
+              <Euler
+                HandleViewer={HandleViewer}
+                SetExercise={props.SetExercise}
+              />
+            </>
+          )}
         </Scroll>
       </ScrollControls>
     </>

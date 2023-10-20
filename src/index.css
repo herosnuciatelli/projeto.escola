@@ -72,7 +72,8 @@ body,
 
 .container__somaAngulosInternos,
 .container__angulosExternos,
-.container__euler {
+.container__euler,
+.container__exercise {
   height: 100vh;
 }
 

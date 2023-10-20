@@ -1,6 +1,11 @@
 import "./index.css";
 
-const Euler = ({ HandleViewer }) => {
+const Euler = ( props ) => {
+
+  const handleExercise = () => {
+    props.SetExercise(true)
+  };
+
   return (
     <div className="container__euler">
       <div
@@ -15,10 +20,10 @@ const Euler = ({ HandleViewer }) => {
       </div>
       <div className="content">
         <div className="button">
-          <button id="viewer" onClick={HandleViewer}>
+          <button id="viewer" onClick={props.HandleViewer}>
             Ver Modelo
           </button>
-          <button className="handle__ex">Exercícios</button>
+          <button className="handle__ex" onClick={handleExercise}>Exercícios</button>
         </div>
       </div>
     </div>

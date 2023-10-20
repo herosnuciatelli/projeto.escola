@@ -148,6 +148,7 @@ button#viewer:hover {
 .container__loading {
   transition: 1.5s;
   animation: FadeOut 1.5s forwards ease-in-out;
+  display: flex;
 }
 
 .container__somaAngulosInternos .content,

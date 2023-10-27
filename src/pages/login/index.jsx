@@ -3,9 +3,12 @@ import Conchete from "../assets/conchete.png";
 import Warnings from "../components/warnings/index";
 import "./index.css";
 import { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
 
 function Login(props) {
   // props.onLoginSuccess("Login_Forçado")
+
+  const [cookies, setCookie] = useCookies(["hasUser"]);
 
   const [warningText, setWarningText] = useState();
   const [warningType, setWarningType] = useState();
@@ -22,6 +25,7 @@ function Login(props) {
       setWarningText("Login feito com Sucesso!");
 
       setTimeout(() => {
+        setCookie("hasUser", "true", { path: "/" });
         return props.onLoginSuccess("Washington");
       }, 1500);
     } else {

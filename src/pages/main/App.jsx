@@ -6,6 +6,7 @@ import Experience from "../components/Experience";
 import { CameraControls } from "@react-three/drei";
 import ExerciciosPoliedros from "../components/exercicios";
 import Final from "../components/Final";
+import { useCookies } from "react-cookie";
 
 const ViewerCube = (props) => {
   const ViewerCubeRef = useRef();
@@ -28,6 +29,15 @@ const ViewerCube = (props) => {
 
 function App() {
   const [user, setUser] = useState();
+  const [cookie] = useCookies(["hasUser"]);
+
+  const cookieValue = cookie["hasUser"];
+
+  useEffect(() => {
+    if (cookieValue) {
+      setUser("Washington");
+    }
+  });
 
   const handleLoginSuccess = (username) => {
     setUser(username);

@@ -50,7 +50,7 @@ const Avatar = (props) => {
     if (WelcomeSection) {
       ScrollTrigger.create({
         trigger: ".container__welcome",
-        onEnter: async () => {
+        onEnter: () => {
           if (AvatarRef.current) {
             gsap.to(AvatarRef.current.position, { x: 0, z: 0, y: -8 }, 2);
             gsap.to(AvatarRef.current.rotation, { z: 0 }, 2);

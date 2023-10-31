@@ -193,4 +193,9 @@ button#viewer:hover {
   .container__diagonais {
     height: 100vh !important;
   }
+
+  .container__euler .content {
+    display: block;
+    padding-top: 170px;
+  }
 }

@@ -85,10 +85,11 @@ const Experience = (props) => {
     }
   }, []);
 
+
   return (
     <>
       <ScrollControls pages={5} damping={0.15}>
-        {(!props.Exercise && !props.FinalScreen ) && (
+        {(!props.Exercise && !props.FinalScreen && !isMobile ) && (
           <>
             <directionalLight castShadow position={[0, 10, 0]} />
 
@@ -122,7 +123,7 @@ const Experience = (props) => {
 
         <Sparkles size={2} color={"#fff"} scale={[10, 10, 10]}></Sparkles>
 
-        <Scroll html style={{ width: "100%" }}>
+        <Scroll html style={{ width: "100%", height: "100%" }}>
           {(!props.Exercise && !props.FinalScreen ) && (
             <>
               <Welcome />

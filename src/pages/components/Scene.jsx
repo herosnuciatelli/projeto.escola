@@ -22,6 +22,15 @@ const Avatar = (props) => {
   const { animations: VictoryAnimation } = useFBX(
     "animations/Victory Idle.fbx"
   );
+  const { animations: HappyIdle } = useFBX(
+    "animations/Happy Idle.fbx"
+  );
+  const { animations: SillyDancing } = useFBX(
+    "animations/Silly Dancing.fbx"
+  );
+  const { animations: EulerSittingPose } = useFBX(
+    "animations/Euler Sitting Pose.fbx"
+  );
 
   LeaningAnimation[0].name = "LeaningAnimation";
   PointingAnimation[0].name = "PointingAnimation";
@@ -29,13 +38,15 @@ const Avatar = (props) => {
   SittingAnimation[0].name = "SittingAnimation";
   KneePointingAnimation[0].name = "KneePointingAnimation";
   VictoryAnimation[0].name = "VictoryAnimation";
+  HappyIdle[0].name = "HappyIdle";
+  SillyDancing[0].name = "SillyDancing";
+  EulerSittingPose[0].name = "EulerSittingPose";
 
   // ScrollAnimation
 
   const [AvatarAnimation, SetAvatarAnimation] = useState(PointingAnimation);
   const [AvatarAnimationString, SetAvatarAnimationString] =
     useState("PointingAnimation");
-  const [Duration, SetDuration] = useState();
 
   const AvatarRef = group;
   const scroll = useScroll();
@@ -91,13 +102,22 @@ const Avatar = (props) => {
         start: "top center",
         end: "top top",
         onEnter: () => {
-          if (AvatarRef.current) {
-            gsap.to(AvatarRef.current.position, { x: 0, z: -8, y: -4 }, 2);
-            gsap.to(AvatarRef.current.rotation, { z: 0 }, 2);
-          }
+          if (props.windowWidth > 768) {
+            if (AvatarRef.current) {
+              gsap.to(AvatarRef.current.position, { x: 0, z: -8, y: -4 }, 2);
+              gsap.to(AvatarRef.current.rotation, { z: 0 }, 2);
+            }
+            SetAvatarAnimation(LeaningAnimation);
+            SetAvatarAnimationString("LeaningAnimation");
+          } else {
+            if (AvatarRef.current) {
+              gsap.to(AvatarRef.current.position, { x: 0, z: -4, y: -5 }, 2);
+              gsap.to(AvatarRef.current.rotation, { z: 0 }, 2);
+            }
 
-          SetAvatarAnimation(LeaningAnimation);
-          SetAvatarAnimationString("LeaningAnimation");
+            SetAvatarAnimation(HappyIdle);
+            SetAvatarAnimationString("HappyIdle");
+          }
         },
       });
 
@@ -106,21 +126,39 @@ const Avatar = (props) => {
         start: "top center",
         end: "top top",
         onEnter: () => {
-          if (AvatarRef.current) {
-            gsap.to(
-              AvatarRef.current.position,
-              {
-                x: !props.isMobile ? -6 : 2,
-                z: !props.isMobile ? -7 : -14,
-                y: !props.isMobile ? -4 : -3,
-              },
-              2
-            );
-            gsap.to(AvatarRef.current.rotation, { z: 0.8, x: Math.PI / -2 }, 2);
-          }
+          if (props.windowWidth > 768) {
+            if (AvatarRef.current) {
+              gsap.to(
+                AvatarRef.current.position,
+                {
+                  x: -6,
+                  z: -7,
+                  y: -4,
+                },
+                2
+              );
+              gsap.to(AvatarRef.current.rotation, { z: 0.8, x: Math.PI / -2 }, 2);
+            }
+  
+            SetAvatarAnimation(SittingAnimation);
+            SetAvatarAnimationString("SittingAnimation");
 
-          SetAvatarAnimation(SittingAnimation);
-          SetAvatarAnimationString("SittingAnimation");
+          } else {
+            if (AvatarRef.current) {
+              gsap.to(
+                AvatarRef.current.position,
+                {
+                  x: 0,
+                  z: -10,
+                  y: -3,
+                },
+                2
+              );
+              
+            }
+            SetAvatarAnimation(SillyDancing);
+            SetAvatarAnimationString("SillyDancing");
+          }
         },
       });
 
@@ -129,13 +167,23 @@ const Avatar = (props) => {
         start: "top center",
         end: "top top",
         onEnter: () => {
-          if (AvatarRef.current) {
-            gsap.to(AvatarRef.current.position, { x: 0, z: -11, y: 0 }, 2);
-            gsap.to(AvatarRef.current.rotation, { z: 0, x: Math.PI / 8 }, 2);
-          }
+          if (props.windowWidth > 768) {
+            if (AvatarRef.current) {
+              gsap.to(AvatarRef.current.position, { x: 0, z: -11, y: 0 }, 2);
+              gsap.to(AvatarRef.current.rotation, { z: 0, x: Math.PI / 8 }, 2);
+            }
+  
+            SetAvatarAnimation(LayingAnimation);
+            SetAvatarAnimationString("LayingAnimation");
 
-          SetAvatarAnimation(LayingAnimation);
-          SetAvatarAnimationString("LayingAnimation");
+          } else {
+
+            if (AvatarRef.current) {
+              gsap.to(AvatarRef.current.position, { x: 0, z: -5, y: -3 }, 2);
+            }
+            SetAvatarAnimation(EulerSittingPose);
+            SetAvatarAnimationString("EulerSittingPose");
+          }
         },
       });
     }
@@ -223,11 +271,6 @@ const Avatar = (props) => {
 
   useEffect(() => {
     actions[AvatarAnimationString].reset().play();
-
-    const duration =
-      actions[AvatarAnimationString].getClip().duration * 1000 - 100;
-
-    SetDuration(duration);
   });
 
   return (

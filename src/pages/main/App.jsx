@@ -48,10 +48,15 @@ function App() {
   const CanvasRef = useRef();
   const [Wireframe, SetWireframe] = useState(false);
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   const handleExit = useCallback(async () => {
     await cameraControlRef.current?.reset(true);
     SetWireframe(false);
     SetViewer(false);
+    handleRefresh();
   }, []);
 
   const handleWireframe = () => {
